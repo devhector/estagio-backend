@@ -13,6 +13,9 @@ module.exports = {
     migrations: {
       tableName: "nave_migrations",
       directory: `${__dirname}/server/database/migrations`
+    },
+    seeds: {
+      directory: `${__dirname}/server/database/seeds`
     }
   }
 
