@@ -11,20 +11,26 @@ module.exports = {
         
     },
 
-    async store(request, response){
+    async store(request, response, next){
 
-        const {	name, birthdate, admission_date, job_role } = request.body;
+        try {
 
-        await knex('navers').insert({
-            name, 
-            birthdate, 
-            admission_date,
-            job_role
-        })
+            const {	name, birthdate, admission_date, job_role } = request.body;
+    
+            const naver = await knex('navers').insert({
+                name, 
+                birthdate, 
+                admission_date,
+                job_role
+            }).returning(['id', 'name', 'birthdate', 'admission_date', 'job_role']);
+    
+            return response.status(201).json(naver);
+            
+        } catch (error) {
+            
+            next(error);
 
-        return response.json({
-            message: "Registered Navers"
-        });
+        }
 
     }
 
