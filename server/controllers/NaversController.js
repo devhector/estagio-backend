@@ -3,11 +3,20 @@ const knex = require("../database");
 
 module.exports = {
 
-    async index(request, response) {
+    async index(request, response, next) {
 
-        const results = await knex('navers');
+        try {
+            
+            const results = await knex('navers');
+    
+            return response.json(results);
 
-        return response.json(results);
+        } catch (error) {
+
+            next(error);
+            
+        }
+
         
     },
 
