@@ -8,6 +8,25 @@ app.use(express.json());
 app.use(helmet());
 app.use(router);
 
+
+app.use((request, response, next) => {
+
+    const error = new Error('404 - Not found');
+    error.status = 404;
+    next(error);
+
+})
+
+
+app.use((error, request, response, next) => {
+
+    response.status(error.status || 500);
+    response.json({ error: error.message});
+
+})
+
 app.listen(3131, () => {
-    console.log("server on!");
+
+    console.log("server running on port 3131!");
+
 });
