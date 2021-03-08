@@ -33,19 +33,22 @@ e depois `npx knex seed:run`
 
 
 
-Para testa a API, use o insomnia, na pasta de mesmo nome, estão as configurações necessárias, precisa somente importar para o insomnia. 
+Para testar a API, use o insomnia. Na pasta de mesmo nome estão as configurações necessárias, precisando somente importar para o insomnia. Se mudar a porta padrão, edite na url do insomnia.
 
 
 
+## Desafio JS
+
+[Desafio dos ex. em javascript](https://codesandbox.io/s/teste-estagio-template-forked-pr5pc)
+
+Eu já tinha feito o desafio antes, [ele está aqui](https://github.com/devhector/EstagioNaveTeam)
 
 
 
+#### Dificuldades
 
+No ex. 10 eu usei alguns "for" aninhados, mas eu sei que daria para resolver com `filter(), map() ou reduce()` e como eu não consegui chegar numa solução com essas funções, deixei do jeito que está.
 
+Na api, na hora de formatar a saída da data, não sei se a forma que eu resolvi seria a mais ideal.
 
-
-
-
-
-
-
+Eu tentei documentar como foi o processo [aqui](https://devhector.github.io/2021/03/03/Teste-para-estagio-back-end/).
