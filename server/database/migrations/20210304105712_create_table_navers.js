@@ -1,7 +1,7 @@
 
 exports.up = knex => knex.schema.createTable('navers', table => {
 
-    table.increments('id');
+    table.increments('id').primary();
     table.string('name').notNullable();
     table.string('job_role').notNullable();
     table.date('birthdate').notNullable();
